@@ -3,9 +3,12 @@ from allure_commons.types import AttachmentType
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
-
 class BasePage:
+
+
+
+    MY_INFO_BUTTON = ("xpath", "//span[text()='My Info']")
+    ADMIN_BUTTON = ("xpath", "//span[text()='Admin']")
 
     def __init__(self, driver):
         self.driver = driver
@@ -27,5 +30,12 @@ class BasePage:
             name=screenshot_name,
             attachment_type=AttachmentType.PNG
         )
+
+    def click_my_info_link(self):
+        self.wait.until(EC.element_to_be_clickable(self.MY_INFO_BUTTON)).click()
+
+
+    def click_admin_link(self):
+        self.wait.until(EC.element_to_be_clickable(self.ADMIN_BUTTON)).click()
 
 
