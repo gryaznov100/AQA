@@ -16,6 +16,7 @@ class TestProfileFeature(BaseTest):
         self.login_page.click_submit_button()
         # self.personal_page.is_opend()
         self.personal_page.click_my_info_link()
+        self.personal_page.is_opend()
         self.personal_page.change_name(f"Test{random.randint(1,100)}")
         self.personal_page.save_changes()
         self.personal_page.is_changes_saved()
@@ -39,3 +40,4 @@ class TestProfileFeature2(BaseTest):
         self.admin_page.click_job_select()
         self.admin_page.click_job_title()
         self.admin_page.click_check_box()
+        self.admin_page.delete_selected_is_clickable()
