@@ -7,4 +7,5 @@ class Links:
     DASHBOARD_PAGE = f"{HOST}dashboard/index"
     PERSONAL_PAGE = f"{HOST}pim/viewPersonalDetails/empNumber/7"
     ADMIN_PAGE = f"{HOST}admin/viewSystemUsers"
+    LEAVE_PAGE = f"{HOST}leave/viewLeaveList"
 

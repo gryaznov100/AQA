@@ -3,8 +3,8 @@ from allure_commons.types import AttachmentType
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class BasePage:
 
+class BasePage:
     MY_INFO_BUTTON = ("xpath", "//span[text()='My Info']")
     ADMIN_BUTTON = ("xpath", "//span[text()='Admin']")
     PIM_BUTTON = ("xpath", "//span[text()='PIM']")
@@ -25,7 +25,6 @@ class BasePage:
     CHANGE_PASSWORD_SELECT_BUTTON = ("xpath", "//a[text()='Change Password']")
     LOGOUT_SELECT_BUTTON = ("xpath", "//a[text()='Logout']")
 
-
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 10, poll_frequency=1)
@@ -34,11 +33,9 @@ class BasePage:
         with allure.step(f"Open {self.PAGE_URL} page"):
             self.driver.get(self.PAGE_URL)
 
-
     def is_opend(self):
         with allure.step(f"Open {self.PAGE_URL} page"):
             self.wait.until(EC.url_to_be(self.PAGE_URL))
-
 
     def make_screenshot(self, screenshot_name):
         allure.attach(
@@ -50,15 +47,13 @@ class BasePage:
     def click_my_info_link(self):
         self.wait.until(EC.element_to_be_clickable(self.MY_INFO_BUTTON)).click()
 
-
     def click_admin_link(self):
         self.wait.until(EC.element_to_be_clickable(self.ADMIN_BUTTON)).click()
+
+    def click_leave_link(self):
+        self.wait.until(EC.element_to_be_clickable(self.LEAVE_BUTTON)).click()
 
     def logout(self):
         self.wait.until(EC.element_to_be_clickable(self.USER_SELECT_BUTTON)).click()
         self.wait.until(EC.element_to_be_clickable(self.LOGOUT_SELECT_BUTTON)).click()
-
-
-
-
-
+        assert 'Login'

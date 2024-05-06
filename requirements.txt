@@ -1,3 +1,5 @@
+Чтобы автоматически сформировался requirements нужно ввести этот скрипт pip3 freeze > requirements.txt
+
 allure-pytest==2.13.2
 allure-python-commons==2.13.2
 attrs==23.2.0
