@@ -53,6 +53,9 @@ class BasePage:
     def click_leave_link(self):
         self.wait.until(EC.element_to_be_clickable(self.LEAVE_BUTTON)).click()
 
+    def click_pim_link(self):
+        self.wait.until(EC.element_to_be_clickable(self.PIM_BUTTON)).click()
+
     def logout(self):
         self.wait.until(EC.element_to_be_clickable(self.USER_SELECT_BUTTON)).click()
         self.wait.until(EC.element_to_be_clickable(self.LOGOUT_SELECT_BUTTON)).click()

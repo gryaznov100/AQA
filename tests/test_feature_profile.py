@@ -58,15 +58,26 @@ from base.base_taste import BaseTest
 #         self.admin_page.enter_username()
 #         self.admin_page.enter_password()
 #         self.admin_page.click_save()
+#
+#
+# class TestLeavePageClearCalendar(BaseTest):
+#
+#     def test_leave_page_clear_calendar(self):
+#         self.login_page.open()
+#         self.login_page.enter_login(self.data.LOGIN)
+#         self.login_page.enter_password(self.data.PASSWORD)
+#         self.login_page.click_submit_button()
+#         self.leave_page.click_leave_link()
+#         self.leave_page.click_from_date_calendar()
+#         self.leave_page.click_clear_of_calendar()
 
 
-class TestLeavePageClearCalendar(BaseTest):
+class TestPIMPageClickCheckBox(BaseTest):
 
-    def test_leave_page_clear_calendar(self):
+    def test_pim_page_click_check_box(self):
         self.login_page.open()
         self.login_page.enter_login(self.data.LOGIN)
         self.login_page.enter_password(self.data.PASSWORD)
         self.login_page.click_submit_button()
-        self.leave_page.click_leave_link()
-        self.leave_page.click_from_date_calendar()
-        self.leave_page.click_clear_of_calendar()
+        self.pim_page.click_pim_link()
+        self.pim_page.click_check_boxes()
