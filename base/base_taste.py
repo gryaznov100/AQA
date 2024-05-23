@@ -6,6 +6,7 @@ from pages.personal_page import PersonalPage
 from pages.admin_page import AdminPage
 from pages.leave_page  import LeavePage
 from pages.pim_page import PIMPage
+from pages.time_page import TimePage
 
 
 class BaseTest:
@@ -17,6 +18,7 @@ class BaseTest:
     admin_page: AdminPage
     leave_page: LeavePage
     pim_page: PIMPage
+    time_page: TimePage
 
     @pytest.fixture(autouse=True)
     def setup(self, request, driver):
@@ -28,4 +30,6 @@ class BaseTest:
         request.cls.admin_page = AdminPage(driver)
         request.cls.leave_page = LeavePage(driver)
         request.cls.pim_page = PIMPage(driver)
+        request.cls.time_page = TimePage(driver)
+
 
