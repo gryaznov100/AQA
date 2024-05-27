@@ -38,9 +38,11 @@ class TimePage(BasePage):
         self.wait.until(EC.element_to_be_clickable(self.TIME_CHANGE_BUTTON)).click()
 
     def input_hour(self):
-        self.wait.until(EC.element_to_be_clickable(self.HOUR_INPUT)).clear()
-        time.sleep(2)
-        self.wait.until(EC.element_to_be_clickable(self.HOUR_INPUT)).send_keys("10")
+        hour = self.wait.until(EC.element_to_be_clickable(self.HOUR_INPUT))
+        hour.send_keys(Keys.COMMAND, "a")
+        hour.send_keys(Keys.DELETE)
+        time.sleep(5)
+        hour.send_keys("10")
 
     def click_in_button(self):
         self.wait.until(EC.element_to_be_clickable(self.IN_BUTTON)).click()

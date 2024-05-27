@@ -4,6 +4,7 @@ import time
 from base.base_page import BasePage
 from config.links import Links
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 
 
 class PIMPage(BasePage):
@@ -38,7 +39,11 @@ class PIMPage(BasePage):
         self.wait.until(EC.element_to_be_clickable(self.INPUT_LAST_NAME)).send_keys('Грязнов')
 
     def input_employee_id(self):
-        self.wait.until(EC.element_to_be_clickable(self.INPUT_EMPLOYEE_ID)).send_keys('1999')
+        emp_id = self.wait.until(EC.element_to_be_clickable(self.INPUT_EMPLOYEE_ID))
+        emp_id.send_keys(Keys.COMMAND, "a")
+        emp_id.send_keys(Keys.DELETE)
+        emp_id.send_keys('1999')
+        time.sleep(5)
 
 
     def click_save_button(self):
