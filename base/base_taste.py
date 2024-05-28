@@ -2,19 +2,18 @@ import pytest
 from config.data import Data
 from pages.login_page import LoginPage
 from pages.dashboard_page import DashboardPage
-from pages.personal_page import PersonalPage
+from pages.my_info_page import MyInfoPage
 from pages.admin_page import AdminPage
-from pages.leave_page  import LeavePage
+from pages.leave_page import LeavePage
 from pages.pim_page import PIMPage
 from pages.time_page import TimePage
 
 
 class BaseTest:
-
     data: Data
     login_page: LoginPage
     dashboard_page: DashboardPage
-    personal_page: PersonalPage
+    my_info_page: MyInfoPage
     admin_page: AdminPage
     leave_page: LeavePage
     pim_page: PIMPage
@@ -24,12 +23,11 @@ class BaseTest:
     def setup(self, request, driver):
         request.cls.driver = driver
         request.cls.data = Data()
+
         request.cls.login_page = LoginPage(driver)
         request.cls.dashboard_page = DashboardPage(driver)
-        request.cls.personal_page = PersonalPage(driver)
+        request.cls.my_info_page = MyInfoPage(driver)
         request.cls.admin_page = AdminPage(driver)
         request.cls.leave_page = LeavePage(driver)
         request.cls.pim_page = PIMPage(driver)
         request.cls.time_page = TimePage(driver)
-
-

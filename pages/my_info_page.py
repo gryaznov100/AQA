@@ -6,9 +6,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import Keys
 
 
-class PersonalPage(BasePage):
+class MyInfoPage(BasePage):
 
-    PAGE_URL = Links.PERSONAL_PAGE
+    PAGE_URL = Links.MY_INFO_PAGE
 
     FIRST_NAME_FIELD = ("xpath", "//input[@name='firstName']")
     LAST_NAME_FIELD = ("xpath", "//input[@name='lastName']")
