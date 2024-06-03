@@ -59,6 +59,9 @@ class BasePage:
     def click_time_link(self):
         self.wait.until(EC.element_to_be_clickable(self.TIME_BUTTON)).click()
 
+    def click_recruitment_link(self):
+        self.wait.until(EC.element_to_be_clickable(self.RECRUITMENT_BUTTON)).click()
+
     def logout(self):
         self.wait.until(EC.element_to_be_clickable(self.USER_SELECT_BUTTON)).click()
         self.wait.until(EC.element_to_be_clickable(self.LOGOUT_SELECT_BUTTON)).click()

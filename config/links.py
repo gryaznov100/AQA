@@ -10,4 +10,4 @@ class Links:
     LEAVE_PAGE = f"{HOST}leave/viewLeaveList"
     PIM_PAGE = f"{HOST}pim/viewEmployeeList"
     TIME_PAGE = f"{HOST}time/viewEmployeeTimesheet"
-
+    RECRUITMENT_PAGE = f"{HOST}recruitment/viewCandidates"

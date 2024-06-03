@@ -19,3 +19,5 @@ class LeavePage(BasePage):
         self.wait.until(EC.element_to_be_clickable(self.CLEAR_CALENDAR_BUTTON)).click()
         self.wait.until(EC.visibility_of_element_located(self.REQUIRED))
         print("!!!!!!!!Проверка пустого календаря сработала!!!!!!!!")
+
+

@@ -10,6 +10,7 @@ class LoginPage(BasePage):
     USERNAME_FIELD = ("xpath", "//input[@name='username']")
     PASSWORD_FIELD = ("xpath", "//input[@name='password']")
     SUBMIT_BUTTON = ("xpath", "//button[@type='submit']")
+    INVALID_CREDENTIALS = ("xpath", "//p[text()='Invalid credentials']")
 
     @allure.step("Enter login")
     def enter_login(self, login):
@@ -22,6 +23,11 @@ class LoginPage(BasePage):
     @allure.step("Click submit button")
     def click_submit_button(self):
         self.wait.until(EC.element_to_be_clickable(self.SUBMIT_BUTTON)).click()
+
+    def invalid_credentials(self):
+        self.wait.until(EC.visibility_of_element_located(self.INVALID_CREDENTIALS))
+        print('Никого не пустили, проверка сработала!!!')
+
 
 
 
