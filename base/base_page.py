@@ -1,3 +1,5 @@
+import time
+
 import allure
 from allure_commons.types import AttachmentType
 from selenium.webdriver.support.ui import WebDriverWait
@@ -66,3 +68,9 @@ class BasePage:
         self.wait.until(EC.element_to_be_clickable(self.USER_SELECT_BUTTON)).click()
         self.wait.until(EC.element_to_be_clickable(self.LOGOUT_SELECT_BUTTON)).click()
         assert 'Login'
+
+    def search_input(self):
+        self.wait.until(EC.element_to_be_clickable(self.SEARCH_INPUT)).send_keys('re')
+        time.sleep(2)
+        self.wait.until(EC.invisibility_of_element_located(self.LEAVE_BUTTON))
+        print('Кнопка видна, проверка сработала!!!')
