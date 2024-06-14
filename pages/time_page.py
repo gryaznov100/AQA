@@ -45,13 +45,10 @@ class TimePage(BasePage):
         hour.send_keys("10")
 
     def click_in_button(self):
-        # button = self.wait.until(EC.element_to_be_clickable(self.IN_BUTTON))
-        # button_in = self.wait.until(EC.visibility_of_element_located(self.IN_BUTTON))
-        # button_out = self.wait.until(EC.visibility_of_element_located(self.OUT_BUTTON))
-        # if button_in.is_dispayed() is True:
-        #     button_in.click()
-        # else:
-        #     button_out.click()
+        if self.wait.until(EC.visibility_of_element_located(self.IN_BUTTON)).is_displayed():
+            self.wait.until(EC.element_to_be_clickable(self.IN_BUTTON)).click()
+        else:
+            self.wait.until(EC.element_to_be_clickable(self.OUT_BUTTON)).click()
 
-        self.wait.until(EC.element_to_be_clickable(self.IN_OUT_BUTTON)).click()
-        time.sleep(2)
+        # self.wait.until(EC.element_to_be_clickable(self.IN_OUT_BUTTON)).click()
+        # time.sleep(2)
