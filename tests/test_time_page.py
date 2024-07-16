@@ -5,7 +5,7 @@ from base.base_taste import BaseTest
 
 
 class TestTimePagePunch(BaseTest):
-    # @pytest.skip
+    @pytest.mark
     def test_time_page_punch(self):
         self.login_page.open()
         self.login_page.enter_login(self.data.LOGIN)
