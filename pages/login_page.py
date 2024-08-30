@@ -28,20 +28,3 @@ class LoginPage(BasePage):
         self.wait.until(EC.visibility_of_element_located(self.INVALID_CREDENTIALS))
         print('Никого не пустили, проверка сработала!!!')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
