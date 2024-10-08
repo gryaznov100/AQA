@@ -22,3 +22,13 @@ class TestMyInfoFeature(BaseTest):
         self.my_info_page.save_changes()
         self.my_info_page.is_changes_saved()
         self.my_info_page.make_screenshot("Success")
+
+class TestClickSwitch(BaseTest):
+    def test_click_switch(self):
+        self.login_page.open()
+        self.login_page.enter_login(self.data.LOGIN)
+        self.login_page.enter_password(self.data.PASSWORD)
+        self.login_page.click_submit_button()
+        self.my_info_page.click_my_info_link()
+        self.my_info_page.click_job()
+        self.my_info_page.click_switch()

@@ -20,3 +20,6 @@ class TestTimePagePunch(BaseTest):
         self.time_page.click_time_change_button()
         self.time_page.input_hour()
         self.time_page.click_in_button()
+
+
+

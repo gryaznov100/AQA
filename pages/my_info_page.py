@@ -14,6 +14,9 @@ class MyInfoPage(BasePage):
     LAST_NAME_FIELD = ("xpath", "//input[@name='lastName']")
     SAVE_BUTTON = ("xpath", "(//button[@type='submit'])[1]")
     SPINNER = ("xpath", "//div[@class='oxd-loading-spinner']")
+    JOB_BUTTON = ("xpath", "//a[text()='Job']")
+    Include_Employment_Contract_Details_SWITCH = ("xpath", "//div[@class='oxd-switch-wrapper']")
+    CONTRACT_START_DATE_INPUT = ("xpath", "(//input[@class='oxd-input oxd-input--active'])[3]")
 
     # @allure.step("Change name")
     def change_name(self, new_name):
@@ -34,3 +37,14 @@ class MyInfoPage(BasePage):
         self.wait.until(EC.invisibility_of_element_located(self.SPINNER))
         self.wait.until(EC.visibility_of_element_located(self.FIRST_NAME_FIELD))
         self.wait.until(EC.text_to_be_present_in_element_value(self.FIRST_NAME_FIELD, self.name))
+
+
+    def click_job(self):
+        self.wait.until(EC.element_to_be_clickable(self.JOB_BUTTON)).click()
+
+
+    def click_switch(self):
+        self.wait.until(EC.element_to_be_clickable(self.Include_Employment_Contract_Details_SWITCH)).click()
+        self.wait.until(EC.visibility_of_element_located(self.CONTRACT_START_DATE_INPUT))
+        print('Свитч нажался, элемент отображется!')
+
