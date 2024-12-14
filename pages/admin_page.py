@@ -5,7 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class AdminPage(BasePage):
-
     PAGE_URL = Links.ADMIN_PAGE
 
     JOB_BUTTON = ("xpath", "//span[text()='Job ']")
@@ -28,7 +27,6 @@ class AdminPage(BasePage):
     ADMIN_ROLE = ("xpath", "//*[contains(text(), 'Admin')]")
     NAME = ("xpath", "//*[contains(text(), 'Nalim  R P')]")
     STATUS = ("xpath", "//*[contains(text(), 'Enabled')]")
-
 
     def click_job_select(self):
         self.wait.until(EC.element_to_be_clickable(self.JOB_BUTTON)).click()
@@ -76,5 +74,3 @@ class AdminPage(BasePage):
     def click_save(self):
         self.wait.until(EC.element_to_be_clickable(self.SAVE_BUTTON)).click()
         time.sleep(3)
-
-
